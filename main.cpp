@@ -55,7 +55,7 @@ bool Ferma(size_t n, size_t t)
 {
 	for (size_t i = 0; i < t; i++)
 	{
-		size_t a = rand() % (n - 2) + 2;
+		size_t a = rand() % (n - 3) + 1;
 		size_t r = Powmod(a, (n - 1), n);
 		if (r != 1)
 		{
@@ -69,9 +69,9 @@ bool Solovei_Shtrassen(size_t n, size_t t)
 {
 	for (size_t i = 0; i < t; i++)
 	{
-		size_t a = rand() % (n - 2) + 2;
+		size_t a = rand() % (n - 4) + 2;
 		size_t r = Powmod(a, (n - 1) / 2, n);
-		if (r != 1 && r != -1)
+		if (r != 1 && r != n-1)
 		{
 			return false;
 		}
@@ -90,12 +90,12 @@ bool Miller_Rabin(size_t n, size_t t)
 	}
 	for (size_t i = 0; i < t; i++)
 	{
-		size_t b = rand() % (n - 2) + 2;
+		size_t b = rand() % (n - 3) + 1;
 		size_t y = Powmod(b, r, n);
-		if (y != 1 && y != -1)
+		if (y != 1 && y != n-1)
 		{
 			size_t j = 1;
-			while (j < s && y != Powmod(-1, 1, n))
+			while (j < s && y != n-1)
 			{
 				y = Powmod(y, 2, n);
 				if (y == 1)
@@ -104,7 +104,7 @@ bool Miller_Rabin(size_t n, size_t t)
 				}
 				j++;
 			}
-			if (y != Powmod(-1, 1, n))
+			if (y != n - 1)
 			{
 				return false;
 			}
