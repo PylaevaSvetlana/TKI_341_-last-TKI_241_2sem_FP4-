@@ -5,7 +5,7 @@ using namespace std;
 bool Ferma(size_t n, size_t t);
 bool Solovei_Shtrassen(size_t n, size_t t);
 bool Miller_Rabin(size_t n, size_t t);
-unsigned long Powmod(unsigned long a, unsigned long x, unsigned long n);
+size_t Powmod(size_t a, size_t x, size_t n);
 void get_number(size_t& number);
 void get_metod(size_t& metod);
 
@@ -113,9 +113,9 @@ bool Miller_Rabin(size_t n, size_t t)
 	return true;
 }
 
-unsigned long Powmod(unsigned long a, unsigned long x, unsigned long n)
+size_t Powmod(size_t a, size_t x, size_t n)
 {
-	unsigned long result = 1;
+	size_t result = 1;
 
 	while (x>0)
 	{
