@@ -31,6 +31,7 @@ int main()
 	{
 		cout << "Algoritm Miller_Rabin: " << Miller_Rabin(n, t) << endl;
 	}
+	return 0;
 }
 
 void get_number(size_t& number)
@@ -133,3 +134,4 @@ size_t Powmod(size_t a, size_t x, size_t n)
 
 	return result % n;
 }
+
